@@ -20,7 +20,7 @@ Here is a comprehensive tour of the mobile application interface.
 <div align="center">
   <!-- Baris 1: Login & Onboarding -->
   <img src="./docs/Loginpage.png" width="200" alt="Login Page" />
-  <img src="./docs/page1.png" width="200" alt="Home Dashboard" />
+  <img src="./docs/Page1.png" width="200" alt="Home Dashboard" />
   <img src="./docs/page2.png" width="200" alt="Watchlist View" />
 </div>
 <br>
