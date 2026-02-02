@@ -13,21 +13,29 @@ Unlike typical cloud-heavy systems, this project utilizes an efficient **File-Ba
 
 ## 📸 App Gallery
 
-*(Please upload your 9 Portrait Screenshots here)*
+Here is a comprehensive tour of the mobile application interface.
+
+*(Screenshots represent the actual iOS Simulator environment)*
 
 <div align="center">
-  <img src="https://placehold.co/300x600/png?text=1+Login" width="200" />
-  <img src="https://placehold.co/300x600/png?text=2+Home" width="200" />
-  <img src="https://placehold.co/300x600/png?text=3+Watchlist" width="200" />
-  <img src="https://placehold.co/300x600/png?text=4+Chart+View" width="200" />
+  <!-- Baris 1: Login & Onboarding -->
+  <img src="./docs/Loginpage.png" width="200" alt="Login Page" />
+  <img src="./docs/page1.png" width="200" alt="Home Dashboard" />
+  <img src="./docs/page2.png" width="200" alt="Watchlist View" />
 </div>
 <br>
 <div align="center">
-  <img src="https://placehold.co/300x600/png?text=5+Strategy" width="200" />
-  <img src="https://placehold.co/300x600/png?text=6+Logs" width="200" />
-  <img src="https://placehold.co/300x600/png?text=7+Settings" width="200" />
-  <img src="https://placehold.co/300x600/png?text=8+Metrics" width="200" />
-  <img src="https://placehold.co/300x600/png?text=9+Profile" width="200" />
+  <!-- Baris 2: Charts & Strategy -->
+  <img src="./docs/page3.png" width="200" alt="Native Charts" />
+  <img src="./docs/page4.png" width="200" alt="Strategy Config" />
+  <img src="./docs/page5.png" width="200" alt="Active Bots" />
+</div>
+<br>
+<div align="center">
+  <!-- Baris 3: Logs & Profile -->
+  <img src="./docs/page6.png" width="200" alt="Trade Logs" />
+  <img src="./docs/page7.png" width="200" alt="Settings" />
+  <img src="./docs/page8(profile).png" width="200" alt="User Profile" />
 </div>
 
 ---
