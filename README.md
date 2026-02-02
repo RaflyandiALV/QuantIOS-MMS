@@ -1,57 +1,111 @@
-# QuantIOS - Native Mobile Trading Companion 📱
+# QuantWeb - Algorithmic Trading & Backtesting Platform 🚀
 
-![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey?style=for-the-badge&logo=apple)
-![Swift](https://img.shields.io/badge/Swift-5.0-orange?style=for-the-badge&logo=swift)
-![SwiftUI](https://img.shields.io/badge/Framework-SwiftUI-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Beta-yellow?style=for-the-badge)
+![React](https://img.shields.io/badge/Frontend-React_Vite-61DAFB?style=for-the-badge&logo=react)
+![Python](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)
+![PostgreSQL](https://img.shields.io/badge/Database-Supabase-3ECF8E?style=for-the-badge&logo=supabase)
+![Telegram](https://img.shields.io/badge/Bot-Telegram_API-26A5E4?style=for-the-badge&logo=telegram)
+![Status](https://img.shields.io/badge/Status-Live_Production-success?style=for-the-badge)
 
-**QuantIOS** is a native iOS application built entirely with **SwiftUI**, designed to provide on-the-go monitoring for the QuantWeb ecosystem. It connects seamlessly to the QuantWeb Python backend to visualize real-time asset prices, monitor active trading bots, and review portfolio performance directly from your iPhone.
+**QuantWeb** is a comprehensive quantitative trading analysis platform that allows users to backtest strategies, automate market scanning, and receive real-time trading signals via Telegram.
+
+**The Problem Solved:**
+* Validating trading strategies using data-driven backtesting instead of intuition.
+* Automating 24/7 market monitoring without the need to constantly watch charts.
+
+---
+
+## 📸 Project Showcase
+
+*(Please upload your 5 Landscape Screenshots here)*
+
+| Dashboard Overview | Strategy Backtester |
+| :---: | :---: |
+| ![Dashboard](https://placehold.co/600x400/png?text=1+Dashboard+Overview) | ![Backtest](https://placehold.co/600x400/png?text=2+Backtest+Engine) |
+
+| Market Scanner | Smart Watchlist | Telegram Integration |
+| :---: | :---: | :---: |
+| ![Scanner](https://placehold.co/600x400/png?text=3+Market+Scanner) | ![Watchlist](https://placehold.co/600x400/png?text=4+Watchlist) | ![Telegram](https://placehold.co/600x400/png?text=5+Telegram+Bot) |
+
+---
 
 ## 🌟 Key Features
 
-* **Live Watchlist:** Real-time price updates for crypto assets (BTC, ETH, SOL) fetched from the central API.
-* **Interactive Mobile Charts:** Native candlestick charting optimized for touch interfaces.
-* **Bot Monitoring:** View the status (Active/Idle) of your running algorithms.
-* **Seamless Integration:** Utilizes `URLSession` and `Combine` for efficient networking with the FastAPI backend.
-
-## 🛠️ Tech Stack
-
-* **Language:** Swift
-* **UI Framework:** SwiftUI
-* **Architecture:** MVVM (Model-View-ViewModel)
-* **Networking:** REST API Integration (Consuming QuantWeb Endpoints)
+* **Real-time Market Scanner:** Automatically scans the market for coins with the highest Win Rate across various sectors (AI, Meme, Big Cap).
+* **Backtesting Engine:** Rigorously tests strategies (Momentum, Mean Reversal, Grid) against historical data.
+* **Smart Watchlist:** Integrated watchlist synchronized with the database.
+* **Telegram AI Bot:** Automatically sends alert notifications to your phone when the server detects a BUY/SELL signal.
 
 ---
 
-## 🚀 How to Run
+## 🛠️ Tech Stack & Architecture
 
-### Prerequisites
-* Mac with **Xcode 14+** installed.
-* **QuantWeb Backend** running locally (or deployed).
+**Data Flow:** `Market Data` -> `Python Backend` -> `Supabase/PostgreSQL` -> `Frontend React` / `Telegram Bot`
 
-### Step-by-Step Guide
-
-1.  **Ensure the Backend is Running:**
-    The app requires the API to fetch data. Make sure your Python FastAPI server is running (usually on port `8000`).
-
-2.  **Open Project in Xcode:**
-    Double-click on `QuantTradeiOS.xcodeproj`.
-
-3.  **Configure API Endpoint:**
-    * Navigate to `QuantTradeiOS/APIService.swift` (or where your URL constant is defined).
-    * Update the `baseURL` variable.
-    * *Important:* If running on a Simulator, `http://127.0.0.1:8000` works. If running on a physical iPhone, use your Mac's Local IP address (e.g., `http://192.168.1.5:8000`).
-
-4.  **Build and Run:**
-    * Select your target simulator (e.g., iPhone 15 Pro).
-    * Press `Cmd + R` or click the Play button.
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | React.js (Vite), Tailwind CSS, Lucide Icons |
+| **Backend** | Python, FastAPI, Uvicorn |
+| **Database** | Supabase (PostgreSQL) |
+| **Trading Libs** | Pandas, Custom Strategy Logic |
+| **Notification** | Telegram Bot API |
+| **Deployment** | Koyeb (Backend), Vercel (Frontend) |
 
 ---
 
-## 📸 Screenshots
+## 💻 How to Run
 
-*(Place your screenshots here)*
+### A. Local Environment Setup
+1.  **Clone Repository:**
+    ```bash
+    git clone [https://github.com/RaflyandiALV/QuantWeb.git](https://github.com/RaflyandiALV/QuantWeb.git)
+    ```
+2.  **Environment Variables:**
+    Create a `.env` file in the root directory:
+    ```env
+    DATABASE_URL=your_postgres_url
+    TELEGRAM_TOKEN=your_bot_token
+    TELEGRAM_CHAT_ID=your_chat_id
+    ```
+
+### B. Backend Setup
+1.  Navigate to the backend folder and install libraries:
+    ```bash
+    pip install -r requirements.txt
+    ```
+2.  Run the Server:
+    ```bash
+    python -m uvicorn backend.main:app --reload
+    ```
+
+### C. Frontend Setup
+1.  Navigate to the frontend folder and install packages:
+    ```bash
+    cd frontend
+    npm install
+    ```
+2.  Run in Development Mode:
+    ```bash
+    npm run dev
+    ```
+    *Access the app at `http://localhost:5173/`*
+
+---
+
+## ⚠️ Engineering Challenges & Solutions
+
+**1. Deployment on Linux (Koyeb)**
+* **Challenge:** Encountered `ModuleNotFoundError` during cloud deployment.
+* **Solution:** Implemented Python Package standards with `__init__.py` and configured `PYTHONPATH` in the runtime environment to ensure proper module resolution.
+
+**2. Database Synchronization**
+* **Challenge:** Connecting a relational database with a dynamic real-time dashboard.
+* **Solution:** Configured CORS middleware to allow secure communication between the Vercel-hosted Frontend and Koyeb-hosted Backend.
+
+---
+
+## 🔗 Live Demo
+* **Live Website:** [Click Here to View App](#) *(Update with your link)*
+* **API Documentation:** [Click Here to View Swagger](#) *(Update with your link)*
 
 ## 👤 Author
-
 **Raflyandi Alviansyah**
